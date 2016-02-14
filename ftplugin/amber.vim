@@ -1,5 +1,5 @@
 " Vim filetype plugin
-" Language: Amber
+" Language: amber
 " Maintainer: Joel Cain
 " Credits: Tim Pope, Joshua Borton
 
