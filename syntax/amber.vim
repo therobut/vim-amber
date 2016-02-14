@@ -23,7 +23,7 @@ unlet! b:current_syntax
 
 syn case match
 
-syn region  javascriptParenthesisBlock start="[" end="]" contains=@htmlJavascript contained keepend
+syn region  javascriptParenthesisBlock start="\[" end="\]" contains=@htmlJavascript contained keepend
 syn cluster htmlJavascript add=javascriptParenthesisBlock
 
 syn region  amberJavascript matchgroup=amberJavascriptOutputChar start="[!&]\==\|\~" skip=",\s*$" end="$" contained contains=@htmlJavascript keepend
@@ -35,7 +35,7 @@ syn cluster amberComponent contains=amberAttributes,amberIdChar,amberBlockExpans
 syn match   amberComment '\s*\/\/.*$'
 syn region  amberCommentBlock start="\z(\s*\)\/\/.*$" end="^\%(\z1\s\|\s*$\)\@!" keepend 
 syn region  amberHtmlConditionalComment start="<!--\%(.*\)>" end="<!\%(.*\)-->"
-syn region  amberAttributes matchgroup=amberAttributesDelimiter start="[" end="]" contained contains=@htmlJavascript,amberHtmlArg,htmlArg,htmlEvent,htmlCssDefinition nextgroup=@amberComponent
+syn region  amberAttributes matchgroup=amberAttributesDelimiter start="\[" end="\]" contained contains=@htmlJavascript,amberHtmlArg,htmlArg,htmlEvent,htmlCssDefinition nextgroup=@amberComponent
 syn match   amberClassChar "\." contained nextgroup=amberClass
 syn match   amberBlockExpansionChar ":\s\+" contained nextgroup=amberTag,amberClassChar,amberIdChar
 syn match   amberIdChar "#[[{]\@!" contained nextgroup=amberId
