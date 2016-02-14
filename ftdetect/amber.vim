@@ -1,3 +1,3 @@
 " Amber
-autocmd BufNewFile,BufRead,BufReadPost *.amber setfiletype amber
+autocmd BufNewFile,BufRead *.amber set filetype=amber
 
