@@ -2,8 +2,6 @@
 
 ***Forked and modified from https://github.com/digitaltoad/vim-pug***
 
-***Not yet functional***
-
 Vim syntax highlighting for [amber](https://github.com/eknkc/amber) templates.
 
 Installation
