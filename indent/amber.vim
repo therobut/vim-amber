@@ -1,8 +1,8 @@
 " Vim indent file
-" Language: Pug
+" Language: Amber
 " Maintainer: Joshua Borton
-" Credits: Tim Pope (vim-pug)
-" Last Change: 2010 Sep 22
+" Credits: Tim Pope (vim-pug), Joshua Borton
+" Last Change: 2016 Feb 13
 
 if exists("b:did_indent")
   finish
@@ -12,25 +12,25 @@ unlet! b:did_indent
 let b:did_indent = 1
 
 setlocal autoindent
-setlocal indentexpr=GetPugIndent()
+setlocal indentexpr=GetAmberIndent()
 setlocal indentkeys=o,O,*<Return>,},],0),!^F
 
 " Only define the function once.
-if exists("*GetPugIndent")
+if exists("*GetAmberIndent")
   finish
 endif
 
 let s:attributes = '\%((.\{-\})\)'
 let s:tag = '\([%.#][[:alnum:]_-]\+\|'.s:attributes.'\)*[<>]*'
 
-if !exists('g:pug_self_closing_tags')
-  let g:pug_self_closing_tags = 'meta|link|img|hr|br|input'
+if !exists('g:amber_self_closing_tags')
+  let g:amber_self_closing_tags = 'meta|link|img|hr|br|input'
 endif
 
 setlocal formatoptions+=r
 setlocal comments+=n:\|
 
-function! GetPugIndent()
+function! GetAmberIndent()
   let lnum = prevnonblank(v:lnum-1)
   if lnum == 0
     return 0
@@ -58,9 +58,9 @@ function! GetPugIndent()
     return increase
   elseif line == '-#'
     return increase
-  elseif line =~? '^\v%('.g:pug_self_closing_tags.')>'
+  elseif line =~? '^\v%('.g:amber_self_closing_tags.')>'
     return indent
-  elseif group =~? '\v^%(pugAttributesDelimiter|pugClass|pugId|htmlTagName|htmlSpecialTagName|pugFilter|pugTagBlockChar)$'
+  elseif group =~? '\v^%(amberAttributesDelimiter|amberClass|amberId|htmlTagName|htmlSpecialTagName|amberFilter|amberTagBlockChar)$'
     return increase
   else
     return indent

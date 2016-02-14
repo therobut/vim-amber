@@ -1,7 +1,7 @@
 " Vim filetype plugin
-" Language: Pug
-" Maintainer: Joshua Borton
-" Credits: Tim Pope
+" Language: Amber
+" Maintainer: Joel Cain
+" Credits: Tim Pope, Joshua Borton
 
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
@@ -37,7 +37,7 @@ endif
 
 " Change the browse dialog on Win32 to show mainly Haml-related files
 if has("gui_win32")
-  let b:browsefilter="Pug Files (*.pug)\t*.pug\n" . s:browsefilter
+  let b:browsefilter="Amber Files (*.amber)\t*.amber\n" . s:browsefilter
 endif
 
 " Load the combined list of match_words for matchit.vim
@@ -47,7 +47,7 @@ endif
 
 setlocal comments=://-,:// commentstring=//\ %s
 
-setlocal suffixesadd+=.pug
+setlocal suffixesadd+=.amber
 
 let b:undo_ftplugin = "setl cms< com< "
       \ " | unlet! b:browsefilter b:match_words | " . s:undo_ftplugin
